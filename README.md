@@ -1,3 +1,14 @@
+新規記事
+
+```
+hugo new post/{year}/{month}/{date}/index.md
+
+# ビルドして追加
+hugo
+git add public
+git push origin gh-pages
+```
+
 ## ブランチを分けて管理する方法
 #### 引用サイト
 [Hugoで1からテーマを作ってGitHub Pagesにデプロイする](https://www.membersedge.co.jp/blog/create-hugo-theme-and-deploy-to-github-pages/)
@@ -8,8 +19,8 @@
 まず同様に任意のプロジェクト名でリポジトリを作成してください。以下プロジェクト名を PROJECT とします。
 PROJECT リポジトリ作成時は、次の画像のように何もファイルを作らないようにしてください(ローカルでコミット済みのため面倒になる)。
 
-
 まず作成したサイトをリモートにプッシュします。
+
 ```
 # Hugoのサイトディレクトリに移動
 cd ~/quickstart
@@ -22,6 +33,7 @@ git remote add origin git@github.com:${USERNAME}/${PROJECT}
 # リモートにプッシュ
 git push -u origin master
 ```
+
 それから、 master ブランチとは独立したブランチ gh-pages を作成し、空のコミットを追加した上でプッシュします。
 (Preparations for gh-pages Branchで書かれているコマンドとほぼ同じです)
 
