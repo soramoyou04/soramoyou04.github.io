@@ -1,3 +1,11 @@
+環境構築
+
+Windows
+
+```
+> choco install hugo
+```
+
 新規記事
 
 ```
