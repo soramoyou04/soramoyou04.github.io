@@ -1,13 +1,19 @@
 新規記事
 
 ```
-hugo new post/{year}/{month}/{date}/index.md
+hugo new post/{year}/{month}-{date}-{title}/index.md
 
 # ビルドして追加
 hugo
 git add public
 git push origin gh-pages
 ```
+
+確認
+```
+hugo serve
+```
+
 
 ## ブランチを分けて管理する方法
 #### 引用サイト
