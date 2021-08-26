@@ -13,7 +13,11 @@ hugo new post/{year}/{month}-{date}-{title}/index.md
 
 # ビルドして追加
 hugo
-git add public
+git worktree add public gh-pages
+cd public
+git add -A
+git commit -m "Publishing to gh-pages"
+cd ..
 git push origin gh-pages
 ```
 
