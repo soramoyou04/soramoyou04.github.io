@@ -13,8 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://www.ino-log.ga/
-root: /soramoyou04.github.io.git/
+url: https://soramoyou04.github.io.git/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -99,10 +98,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: landscape
-theme_config:
-  menu:
-    Home: /soramoyou04.github.io.git
-    Archives: /soramoyou04.github.io.git/archives
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
