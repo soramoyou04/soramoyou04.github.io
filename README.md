@@ -18,13 +18,16 @@ git push origin gh-pages
 git checkout --orphan gh-pages
 ```
 
+## 再構築して反映する手順
 
-The default branch has been renamed!
-main is now named master
-
-If you have a local clone, you can update it by running the following commands.
-
-git branch -m main master
-git fetch origin
-git branch -u origin/master master
-git remote set-head origin -a
+```
+npm run clean
+git worktree prune
+git worktree add public gh-pages
+npm run build
+cd public/
+git add -A
+git commit -m "comment"
+cd ../
+git push origin gh-pages
+```
