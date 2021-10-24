@@ -6,7 +6,7 @@ git worktree add public gh-pages
 cd public
 git add -A
 git commit -m "Publishing to gh-pages"
-cd ..
+cd ../
 git push origin gh-pages
 ```
 
