@@ -106,3 +106,6 @@ deploy:
   type: git
   repo: 'git@github.com:soramoyou04/soramoyou04.github.io.git'
   branch: gh-pages
+
+tag_plantuml:
+	type: static
