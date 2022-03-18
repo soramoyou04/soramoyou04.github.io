@@ -1,4 +1,10 @@
+## テーマを反映
 
+```
+git clone --depth 1 https://github.com/hexojs/hexo-theme-light themes/light
+```
+
+a
 ## ビルドファイルを GitHub Pages に反映
 
 ```
