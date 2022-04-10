@@ -4,7 +4,27 @@
 git clone --depth 1 https://github.com/hexojs/hexo-theme-light themes/light
 ```
 
-a
+## 新規記事を作成する
+
+```
+npx hexo new [layout] <title>
+npx hexo new draft example_draft_tilte
+npx hexo new post example_post_title
+```
+
+### 記事を日付の階層にする
+_config.yml を編集する。
+
+```
+new_post_name: :year/:month/:day/:title.md
+```
+
+|Layout|Path|
+|:--|:--|
+|post|source/_posts|
+|page|source|
+|draft|source/_drafts|
+
 ## ビルドファイルを GitHub Pages に反映
 
 ```
