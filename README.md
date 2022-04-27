@@ -19,6 +19,8 @@ _config.yml を編集する。
 new_post_name: :year/:month/:day/:title.md
 ```
 
+ 参考：https://cloudpack.media/6499
+
 |Layout|Path|
 |:--|:--|
 |post|source/_posts|
@@ -27,13 +29,32 @@ new_post_name: :year/:month/:day/:title.md
 
 ## ビルドファイルを GitHub Pages に反映
 
+### 公開用のブランチを設定する
+
 ```
 git worktree add public gh-pages
+```
+
+### 投稿を公開用に生成する
+
+```
+npx hexo generate
+```
+
+### 生成した記事をデプロイする
+
+```
 cd public
 git add -A
 git commit -m "Publishing to gh-pages"
 cd ../
 git push origin gh-pages
+```
+
+↓ 一発コマンド
+
+```
+cd public && git add -A && git commit -m "Publishing to gh-pages" && cd ../ && git push origin gh-pages
 ```
 
 [参考：Hugoで1からテーマを作ってGitHub Pagesにデプロイする](https://www.membersedge.co.jp/blog/create-hugo-theme-and-deploy-to-github-pages/)
