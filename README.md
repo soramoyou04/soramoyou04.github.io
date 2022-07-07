@@ -1,3 +1,14 @@
+# 環境構築
+
+```
+$ npm install
+$ npm run build
+$ npx hexo server
+```
+
+## 接続
+http://localhost:4000
+
 ## テーマを反映
 
 ```
