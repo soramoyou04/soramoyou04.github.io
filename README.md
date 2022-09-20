@@ -1,3 +1,7 @@
+# front matter
+https://qiita.com/nyu___nS/items/3fca57ce133be69835ba
+https://hexo.io/docs/front-matter.html
+
 # 環境構築
 
 ```
@@ -65,7 +69,10 @@ git push origin gh-pages
 ↓ 一発コマンド
 
 ```
+Linux
 cd public && git add -A && git commit -m "Publishing to gh-pages" && cd ../ && git push origin gh-pages
+Windows
+cd public ; git add -A ; git commit -m "Publishing to gh-pages" ; cd ../ ; git push origin gh-pages
 ```
 
 [参考：Hugoで1からテーマを作ってGitHub Pagesにデプロイする](https://www.membersedge.co.jp/blog/create-hugo-theme-and-deploy-to-github-pages/)
