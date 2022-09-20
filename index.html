@@ -45,35 +45,342 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-  <article id="post-hello-world" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <article id="post-react" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2021-10-12T05:29:10.824Z"><a href="/2021/10/12/hello-world/">2021-10-12</a></time>
+        <time class="dt-published" datetime="2022-09-18T20:56:00.000Z"><a href="/2022/09/19/react/">2022-09-19</a></time>
       
       
   
-    <h1 class="title"><a href="/2021/10/12/hello-world/">Hello World</a></h1>
+    <h1 class="title"><a href="/2022/09/19/react/">React ネストされたリンクの設定</a></h1>
   
 
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">\SRC</span><br><span class="line">│  App.css</span><br><span class="line">│  App.jsx</span><br><span class="line">│  App.test.js</span><br><span class="line">│  index.css</span><br><span class="line">│  index.js</span><br><span class="line">│  logo.svg</span><br><span class="line">│  reportWebVitals.js</span><br><span class="line">│  setupTests.js</span><br><span class="line">│</span><br><span class="line">├─components</span><br><span class="line">│      Home.jsx</span><br><span class="line">│      Page1.jsx</span><br><span class="line">│      Page1DetailA.jsx</span><br><span class="line">│      Page1DetailB.jsx</span><br><span class="line">│      Page2.jsx</span><br><span class="line">│</span><br><span class="line">└─router</span><br><span class="line">        Router.jsx</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>package.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">  <span class="attr">&quot;@testing-library/jest-dom&quot;</span>: <span class="string">&quot;^5.16.5&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;@testing-library/react&quot;</span>: <span class="string">&quot;^13.4.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;@testing-library/user-event&quot;</span>: <span class="string">&quot;^13.5.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;react&quot;</span>: <span class="string">&quot;^18.2.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;react-dom&quot;</span>: <span class="string">&quot;^18.2.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;react-router-dom&quot;</span>: <span class="string">&quot;^6.3.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;react-scripts&quot;</span>: <span class="string">&quot;5.0.1&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;web-vitals&quot;</span>: <span class="string">&quot;^2.1.4&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserRouter, Link &#125; <span class="keyword">from</span> <span class="string">&#x27;react-router-dom&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Router &#125; <span class="keyword">from</span> <span class="string">&#x27;./router/Router&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">BrowserRouter</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;App&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#123;</span>`/`&#125;&gt;</span>Home<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#123;</span>`<span class="attr">page1</span>`&#125;&gt;</span>Page1<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#123;</span>`<span class="attr">page2</span>`&#125;&gt;</span>Page2<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">Router</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">BrowserRouter</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Routes, Route &#125; <span class="keyword">from</span> <span class="string">&quot;react-router-dom&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Home &#125; <span class="keyword">from</span> <span class="string">&quot;../components/Home&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Page1 &#125; <span class="keyword">from</span> <span class="string">&quot;../components/Page1&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Page1DetailA &#125; <span class="keyword">from</span> <span class="string">&quot;../components/Page1DetailA&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Page1DetailB &#125; <span class="keyword">from</span> <span class="string">&quot;../components/Page1DetailB&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Page2 &#125; <span class="keyword">from</span> <span class="string">&quot;../components/Page2&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> Router = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">Routes</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Home</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;page1&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Route</span> <span class="attr">index</span>=<span class="string">&#123;true&#125;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Page1</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&#123;</span>`<span class="attr">detailA</span>`&#125; <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Page1DetailA</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&#123;</span>`<span class="attr">detailB</span>`&#125; <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Page1DetailB</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&#123;</span>`<span class="attr">page2</span>`&#125; <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Page2</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">Routes</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Routes, Route &#125; <span class="keyword">from</span> <span class="string">&quot;react-router-dom&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Home &#125; <span class="keyword">from</span> <span class="string">&quot;../components/Home&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Page1 &#125; <span class="keyword">from</span> <span class="string">&quot;../components/Page1&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Page1DetailA &#125; <span class="keyword">from</span> <span class="string">&quot;../components/Page1DetailA&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Page1DetailB &#125; <span class="keyword">from</span> <span class="string">&quot;../components/Page1DetailB&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Page2 &#125; <span class="keyword">from</span> <span class="string">&quot;../components/Page2&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> Router = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">Routes</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Home</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;page1&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Page1</span> /&gt;</span>&#125;&gt;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&#123;</span>`<span class="attr">detailA</span>`&#125; <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Page1DetailA</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&#123;</span>`<span class="attr">detailB</span>`&#125; <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Page1DetailB</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&#123;</span>`<span class="attr">page2</span>`&#125; <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Page2</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">Routes</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-test-post" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2022-04-10T07:59:30.000Z"><a href="/2022/04/10/test-post/">2022-04-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2022/04/10/test-post/">test_post</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-2021-vs-code-x11" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2021-10-31T05:58:41.000Z"><a href="/2021/10/31/2021-vs-code-x11/">2021-10-31</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2021/10/31/2021-vs-code-x11/">VS Code で x11 Fowarding の設定する（Windows）</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>環境<br>Wnindow10<br>kali linux</p>
+<p>kali linux にソースを置き、VS Code で SSH接続 してプログラムelectron などデスクトップ</p>
+<p>インストールする<br>VcXsrv Windows X Server<br><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/vcxsrv/">https://sourceforge.net/projects/vcxsrv/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install x11-apps</span><br></pre></td></tr></table></figure>
+
+<p><code>sshd</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/sshd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X11Forwarding yes</span><br><span class="line">X11UseLocalhost no</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/sshd reload</span><br></pre></td></tr></table></figure>
+
+<p>VS Code で SSH 接続時に実行する batプログラムを作成する。</p>
+<p><code>x11ssh.bat</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set DISPLAY=localhost:0.0</span><br><span class="line">ssh %*</span><br></pre></td></tr></table></figure>
+
+<p><code>~/User/&#123;user&#125;/.ssh/config</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host *</span><br><span class="line">    ForwardX11 yes</span><br><span class="line">    ForwardX11Trusted yes</span><br></pre></td></tr></table></figure>
+
+<p>echo $DISPLAY</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-2021-rails-study-01" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2021-10-26T05:23:28.000Z"><a href="/2021/10/26/2021-rails-study-01/">2021-10-26</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2021/10/26/2021-rails-study-01/">rails の Controller について</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <h2 id="bootstrap-を追加する"><a href="#bootstrap-を追加する" class="headerlink" title="bootstrap を追加する"></a>bootstrap を追加する</h2><h2 id="controller-を追加する"><a href="#controller-を追加する" class="headerlink" title="controller を追加する"></a>controller を追加する</h2><p>./app/contollers</p>
+<p>xxx_controller.rb</p>
+<p>./app/views/xxx</p>
+<p>index.html.erb</p>
+<h2 id="PID-の重複で-docker-が起動しない場合"><a href="#PID-の重複で-docker-が起動しない場合" class="headerlink" title="PID の重複で docker が起動しない場合"></a>PID の重複で docker が起動しない場合</h2>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-2021-rails-study-02" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2021-10-26T05:23:28.000Z"><a href="/2021/10/26/2021-rails-study-02/">2021-10-26</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2021/10/26/2021-rails-study-02/">rails の Controller について</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <h2 id="Bootstrap-の導入"><a href="#Bootstrap-の導入" class="headerlink" title="Bootstrap の導入"></a>Bootstrap の導入</h2><h3 id="Gemfile-を編集"><a href="#Gemfile-を編集" class="headerlink" title="Gemfile を編集"></a>Gemfile を編集</h3><p><code>Gemfile</code> に <code>bootstrap</code> を追記する。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="string">&#x27;bootstrap&#x27;</span>, <span class="string">&#x27;~&gt; 4.0.0&#x27;</span></span><br><span class="line">gem <span class="string">&#x27;mini_racer&#x27;</span> <span class="comment"># autoprefixer-rails という gem の動作に必要</span></span><br></pre></td></tr></table></figure>
+
+<p>変更を反映するため、 <code>bundle install</code> する。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bundle install</span><br></pre></td></tr></table></figure>
+
+<p><code>Dockerfile</code> に記述されているなら <code>build</code> する。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose build</span><br></pre></td></tr></table></figure>
+
+<h3 id="SCSS-を編集する"><a href="#SCSS-を編集する" class="headerlink" title="SCSS を編集する"></a>SCSS を編集する</h3><p><code>./app/assets/stylesheets/</code> にある <code>application.css</code> を <code>application.scss</code> に変更して編集する。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- *= require_tree .</span><br><span class="line">- *= require_self</span><br><span class="line">+ @import bootstrap</span><br></pre></td></tr></table></figure>
+
+<h3 id="javascript-を編集する"><a href="#javascript-を編集する" class="headerlink" title="javascript を編集する"></a>javascript を編集する</h3><p><code>./app/assets/javascripts/</code> の <code>application.js</code> を編集する。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- //= require jquery</span><br><span class="line">+ //= require jquery3</span><br><span class="line">+ //= require popper</span><br><span class="line">+ //= require bootstrap-sprockets</span><br></pre></td></tr></table></figure>
+
+<h2 id="Bootstrap、SCSS-を反映する"><a href="#Bootstrap、SCSS-を反映する" class="headerlink" title="Bootstrap、SCSS を反映する"></a>Bootstrap、SCSS を反映する</h2><p><code>rails-kj/app/views/layouts/</code> の <code>application.html.erb</code> を編集する。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  &lt;body&gt;</span><br><span class="line">+    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">      &lt;%= yield %&gt;</span><br><span class="line">+   &lt;div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>rails-kj/app/assets/stylesheets/</code></p>
+<p><code>base.scss</code><br><code>boards.scss</code></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-2021-kali-static-ip" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2021-10-24T05:23:28.000Z"><a href="/2021/10/24/2021-kali-static-ip/">2021-10-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2021/10/24/2021-kali-static-ip/">kali の IP を固定する</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>ローカル接続している開発環境の kali linux に ssh 接続する際に起動毎に ip が変わると困るので、ip を固定する。</p>
+<p><code>interfaces</code> ファイルを編集する。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/network/interfaces</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># This file describes the network interfaces available on your system</span><br><span class="line"># and how to activate them. For more information, see interfaces(5).</span><br><span class="line"></span><br><span class="line">source /etc/network/interfaces.d/*</span><br><span class="line"></span><br><span class="line"># The loopback network interface</span><br><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"></span><br><span class="line"># -- ここから下を追加する --</span><br><span class="line"># eth0 がネットワークコネクタなので、設定したいコネクタを設定する</span><br><span class="line"># ここでは ip を 192.168.11.60 に固定</span><br><span class="line"># ゲートウェイを 192.168.11.1 に設定</span><br><span class="line"></span><br><span class="line"># Local network interface</span><br><span class="line">allow-hotplug eth0</span><br><span class="line">iface eth0 inet static</span><br><span class="line">address 192.168.11.60</span><br><span class="line">netmask 255.255.255.0</span><br><span class="line">gateway 192.168.11.1</span><br></pre></td></tr></table></figure>
+
+<p>interfaces ファイルを上書き保存したら再起動する。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo reboot</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-2021-github-connect-ssh" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2021-10-15T16:35:21.000Z"><a href="/2021/10/16/2021-github-connect-ssh/">2021-10-16</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2021/10/16/2021-github-connect-ssh/">GitHub への SSH 接続設定</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-2021-linux-hexo" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2021-10-15T15:31:41.000Z"><a href="/2021/10/16/2021-linux-hexo/">2021-10-16</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2021/10/16/2021-linux-hexo/">WSL での Node.js 環境構築し、hexo でブログをはじめる</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <h2 id="環境について"><a href="#環境について" class="headerlink" title="環境について"></a>環境について</h2><p>WSL は Ubuntu で用意しているものとします。<br>まずは更新。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt update &amp;&amp; sudo apt upgrade -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="nodejs-と-npm-をインストール"><a href="#nodejs-と-npm-をインストール" class="headerlink" title="nodejs と npm をインストール"></a>nodejs と npm をインストール</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install nodejs npm -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="nvm-をインストール"><a href="#nvm-をインストール" class="headerlink" title="nvm をインストール"></a>nvm をインストール</h2><p>nvm の最新バージョンは <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">GitHub</a> を確認すること。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install curl -y</span><br><span class="line">$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash</span><br></pre></td></tr></table></figure>
+
+<p>インストールが完了したらターミナルを閉じてログインし直します。<br>ちゃんとインストールできているかバージョンを確認します。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v10.16.3</span><br><span class="line">$ npm -v</span><br><span class="line">6.14.15</span><br><span class="line">$ nvm -v</span><br><span class="line">0.38.0</span><br></pre></td></tr></table></figure>
+
+<h2 id="nvm-の使い方"><a href="#nvm-の使い方" class="headerlink" title="nvm の使い方"></a>nvm の使い方</h2><ul>
+<li>利用可能なバージョンを一覧表示する。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm ls-remote</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>インストール済のバージョンを表示する。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm ls</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>エイリアス設定を確認する。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm alias</span><br></pre></td></tr></table></figure>
+
+<p>node のインストールされているバージョンが古いのでLTS版を指定してインストールします。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install --lts</span><br><span class="line">$ node -v</span><br><span class="line">v14.18.1</span><br></pre></td></tr></table></figure>
+
+<p>参考: <a target="_blank" rel="noopener" href="https://laboradian.com/how-to-use-nvm/">Node.js のバージョン管理ツール nvm の使い方</a><br>参考: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/windows/dev-environment/javascript/nodejs-on-wsl">Node.js を Linux 用 Windows サブシステム (WSL2) にインストールする</a><br>参考: <a target="_blank" rel="noopener" href="https://prograshi.com/language/nodejs/nvm-install-update-node/">nvmとは何か？Node.jsのインストールと最新の安定版にアップデートする方法｜バージョン指定と変更（npm）</a></p>
+<h2 id="hexo-をインストール"><a href="#hexo-をインストール" class="headerlink" title="hexo をインストール"></a>hexo をインストール</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir blogs</span><br><span class="line"># cd blogs</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -108,12 +415,35 @@
   
 
   
+<div class="widget tag">
+  <h3 class="title">タグ</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/ip/">ip</a><small>1</small></li>
+  
+    <li><a href="/tags/kali/">kali</a><small>1</small></li>
+  
+    <li><a href="/tags/linux/">linux</a><small>1</small></li>
+  
+    <li><a href="/tags/network/">network</a><small>1</small></li>
+  
+    <li><a href="/tags/rails/">rails</a><small>2</small></li>
+  
+    <li><a href="/tags/react/">react</a><small>1</small></li>
+  
+    <li><a href="/tags/ruby/">ruby</a><small>2</small></li>
+  
+    <li><a href="/tags/study/">study</a><small>2</small></li>
+  
+  </ul>
+</div>
+
 </aside>
     <div class="clearfix"></div>
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2021 Naoki
+  &copy; 2022 Naoki
   
 </div>
 <div class="clearfix"></div></footer>
