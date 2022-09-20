@@ -66,7 +66,7 @@ cd ../
 git push origin gh-pages
 ```
 
-↓ 一発コマンド
+↓ gh-pages 更新一発コマンド
 
 ```
 Linux
