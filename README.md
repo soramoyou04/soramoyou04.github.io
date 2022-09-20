@@ -70,9 +70,9 @@ git push origin gh-pages
 
 ```
 # Linux
-npx hexo generate && cd public && git add -A && git commit -m "Publishing to gh-pages" && cd ../ && git push origin gh-pages -f
+npx hexo generate && cd public && git add -A && git commit -m "Publishing to gh-pages" && cd ../ && git push origin gh-pages
 # Windows
-npx hexo generate ; cd public ; git add -A ; git commit -m "Publishing to gh-pages" ; cd ../ ; git push origin gh-pages -f
+npx hexo generate ; cd public ; git add -A ; git commit -m "Publishing to gh-pages" ; cd ../ ; git push origin gh-pages
 ```
 
 [参考：Hugoで1からテーマを作ってGitHub Pagesにデプロイする](https://www.membersedge.co.jp/blog/create-hugo-theme-and-deploy-to-github-pages/)

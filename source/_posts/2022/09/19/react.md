@@ -4,6 +4,28 @@ date: 2022-09-19 05:56:00
 tags: react
 ---
 
+{% plantuml %}
+
+(*) --> "Find Event"
+"Find Event" -> "Attend Event"
+
+if "Capacity?" then
+  ->[ok] "Create Ticket"
+else
+  -->[full] if "Standby?" then
+    ->[ok] "Standby Ticket"
+  else
+    -->[no] "Cancel Ticket"
+    "Cancel Ticket" --> (*)
+  endif
+endif
+
+"Create Ticket" --> ==show==
+"Standby Ticket" --> ==show==
+==show== --> "Show Ticket"
+"Show Ticket" --> (*)
+{% endplantuml %}
+
 ```
 \SRC
 │  App.css
@@ -39,8 +61,6 @@ package.json
     "web-vitals": "^2.1.4"
   },
 ```
-
-![](/img/react.md_2022-09-19-12-03-07.png)
 
 ```js
 import { BrowserRouter, Link } from 'react-router-dom';

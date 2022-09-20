@@ -4,12 +4,12 @@
 
 # Site
 title: INO-LOG
-subtitle: ''
+subtitle: 'エンジニアの置き物'
 description: ''
 keywords:
 author: Naoki
 language: ja
-timezone: ''
+timezone: 'Japan'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -104,7 +104,7 @@ theme: light
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
+  type: github
   repo: 'git@github.com:soramoyou04/soramoyou04.github.io.git'
   branch: gh-pages
 
